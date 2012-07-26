@@ -128,55 +128,9 @@ function responsive_theme_options_do_page() {
             
             <div id="rwd" class="grid col-940">
 
-            <h3 class="rwd-toggle"><a href="#"><?php _e('Theme Elements', 'responsive'); ?></a></h3>
-            <div class="rwd-container">
-                <div class="rwd-block"> 
-                               
-                <?php
-                /**
-                 * Breadcrumb Lists
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Disable Breadcrumb Lists?', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-					    <input id="responsive_theme_options[breadcrumb]" name="responsive_theme_options[breadcrumb]" type="checkbox" value="1" <?php isset($options['breadcrumb']) ? checked( '1', $options['breadcrumb'] ) : checked('0', '1'); ?> />
-						<label class="description" for="responsive_theme_options[breadcrumb]"><?php _e('Check to disable', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
+            
 
-                <?php
-                /**
-                 * CTA Button
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Disable Call to Action Button?', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-					    <input id="responsive_theme_options[cta_button]" name="responsive_theme_options[cta_button]" type="checkbox" value="1" <?php isset($options['cta_button']) ? checked( '1', $options['cta_button'] ) : checked('0', '1'); ?> />
-						<label class="description" for="responsive_theme_options[cta_button]"><?php _e('Check to disable', 'responsive'); ?></label>
-                        <p class="submit">
-                        <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
-                        </p>
-                    </div><!-- end of .grid col-620 -->
-                                    
-                </div><!-- end of .rwd-block -->
-            </div><!-- end of .rwd-container -->
-
-            <h3 class="rwd-toggle"><a href="#"><?php _e('Logo Upload', 'responsive'); ?></a></h3>
-            <div class="rwd-container">
-                <div class="rwd-block">
-                <?php
-                /**
-                 * Logo Upload
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Custom Header', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        
-                        <p><?php printf(__('Need to replace or remove default logo?','responsive')); ?> <?php printf(__('<a href="%s">Click here</a>.', 'responsive'), admin_url('themes.php?page=custom-header')); ?></p>
-                     			
-                    </div><!-- end of .grid col-620 -->
-                    
-                </div><!-- end of .rwd-block -->
-            </div><!-- end of .rwd-container -->
+           
                         
             <h3 class="rwd-toggle"><a href="#"><?php _e('Home Page', 'responsive'); ?></a></h3>
             <div class="rwd-container">
@@ -402,31 +356,7 @@ function responsive_theme_options_do_page() {
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
             
-            <h3 class="rwd-toggle"><a href="#"><?php _e('Custom CSS Styles', 'responsive'); ?></a></h3>
-            <div class="rwd-container">
-                <div class="rwd-block"> 
-
-                <?php
-                /**
-                 * Custom Styles
-                 */
-                ?>
-                <div class="grid col-300">
-				    <?php _e('Custom CSS Styles', 'responsive'); ?>
-                    <a class="help-links" href="<?php echo esc_url(__('https://developer.mozilla.org/en/CSS','responsive')); ?>" title="<?php esc_attr_e('CSS Tutorial', 'responsive'); ?>" target="_blank">
-                    <?php printf(__('CSS Tutorial','responsive')); ?></a>
-                </div><!-- end of .grid col-300 -->
-                
-                    <div class="grid col-620 fit">
-                        <textarea id="responsive_theme_options[responsive_inline_css]" class="inline-css large-text" cols="50" rows="30" name="responsive_theme_options[responsive_inline_css]"><?php if (!empty($options['responsive_inline_css'])) echo esc_textarea($options['responsive_inline_css']); ?></textarea>
-                        <label class="description" for="responsive_theme_options[responsive_inline_css]"><?php _e('Enter your custom CSS styles.', 'responsive'); ?></label>
-                        <p class="submit">
-                        <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
-                        </p>
-                    </div><!-- end of .grid col-620 -->
-                                    
-                </div><!-- end of .rwd-block -->
-            </div><!-- end of .rwd-container -->
+          
             
             </div><!-- end of .grid col-940 -->
         </form>
@@ -471,7 +401,7 @@ function responsive_theme_options_validate($input) {
 	$input['yelp_uid'] = esc_url_raw($input['yelp_uid']);
 	$input['vimeo_uid'] = esc_url_raw($input['vimeo_uid']);
 	$input['foursquare_uid'] = esc_url_raw($input['foursquare_uid']);
-	$input['responsive_inline_css'] = wp_kses_stripslashes($input['responsive_inline_css']);
+
 	
     return $input;
 }
