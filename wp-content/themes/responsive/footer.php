@@ -107,13 +107,7 @@ if ( !defined('ABSPATH')) exit;
         </div><!-- end of .copyright -->
         
         <div class="grid col-300 scroll-top"><a href="#scroll-top" title="<?php esc_attr_e( 'scroll to top', 'responsive' ); ?>"><?php _e( '&uarr;', 'responsive' ); ?></a></div>
-        
-        <div class="grid col-300 fit powered">
-            <a href="<?php echo esc_url(__('http://themeid.com/responsive-theme/','responsive')); ?>" title="<?php esc_attr_e('Responsive Theme', 'responsive'); ?>">
-                    <?php printf('Responsive Theme'); ?></a>
-            <?php esc_attr_e('powered by', 'responsive'); ?> <a href="<?php echo esc_url(__('http://wordpress.org/','responsive')); ?>" title="<?php esc_attr_e('WordPress', 'responsive'); ?>">
-                    <?php printf('WordPress'); ?></a>
-        </div><!-- end .powered -->
+      
         
     </div><!-- end of col-940 -->
     </div><!-- end #footer-wrapper -->
